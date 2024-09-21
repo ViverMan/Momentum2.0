@@ -22,19 +22,19 @@ function time() {
         let second = today.getSeconds();
 
         if (hour >= 0) {
-            img.style.backgroundImage = imageList[0];
-        };
-
-        if (hour >= 6) {
             img.style.backgroundImage = imageList[1];
         };
 
+        if (hour >= 6) {
+            img.style.backgroundImage = imageList[3];
+        };
+
         if (hour >= 12) {
-            img.style.backgroundImage = imageList[2];
+            img.style.backgroundImage = imageList[5];
         };
 
         if (hour >= 18) {
-            img.style.backgroundImage = imageList[3];
+            img.style.backgroundImage = imageList[7];
         };
 
         hour = checkTime(hour);

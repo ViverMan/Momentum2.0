@@ -1,6 +1,10 @@
 [
     "url('./../../img/background/01.jpg')",
+    "url('./../../img/background/01@2x.jpg')",
     "url('./../../img/background/02.jpg')",
+    "url('./../../img/background/02@2x.jpg')",
     "url('./../../img/background/03.jpg')",
-    "url('./../../img/background/04.jpg')"
+    "url('./../../img/background/03@2x.jpg')",
+    "url('./../../img/background/04.jpg')",
+    "url('./../../img/background/04@2x.jpg')"  
 ]
