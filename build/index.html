@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Test</title>
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+
+	<body>
+		<main class="main">
+			<div class="container-full">
+				<div class="slide-container">
+					<div class="slide" id="imageID"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="date-time__wrapper">
+					<div class="date-time__item">
+						<p class="current-time" id="timeNow"></p>
+					</div>
+					<div class="date-time-region">
+						<div class="date-time__item">
+							<p class="current-day" id="dayNow"></p>
+						</div>
+						<div class="date-time__item">
+							<p class="current-month" id="monthNow"></p>
+						</div>
+						<div class="date-time__item">
+							<p class="current-week" id="weekNow"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="weather">
+				<container class="container-small">
+					<div class="weather__wrapper">
+						<form action="" class="weather__form" id="weatherID">
+							<button class="form__btn">
+								<svg class="icon icon--search">
+									<use href="./img/svgsprite/sprite.symbol.svg#search"></use>
+								</svg>
+							</button>
+							<input type="text" placeholder="Введите название города" class="form__input" />
+						</form>
+
+						<section class="weather__items">
+							<section class="item">
+								<div class="item__img">
+									<img class="weather__img" src="" alt="icon" />
+								</div>
+								<div class="weather__temp item__value"></div>
+								<div class="weather__city item__title"></div>
+							</section>
+
+							<section class="item">
+								<div class="item__img">
+									<svg class="icon icon--humidity">
+										<use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
+									</svg>
+								</div>
+								<div class="item__value" id="humidity"></div>
+								<div class="item__title">
+									Влажность
+								</div>
+							</section>
+
+							<section class="item">
+								<div class="item__img">
+									<svg class="icon icon--wind-speed">
+										<use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
+									</svg>
+								</div>
+								<div class="item__value" id="wind"></div>
+								<div class="item__title">
+									Ветер
+								</div>
+							</section>
+						</section>
+					</div>
+				</container>
+			</section>
+
+			<container class="container-todo" id="taskList">
+				<a class="todo-head" href="#!">
+					<section class="task-List-title">
+						<h1 class="title-1">ToDo</h1>
+					</section>
+				</a>
+
+				<!-- List of tasks -->
+				<section class="card">
+					<ul id="tasksList" class="list-group">
+						<!-- <li id="emptyList" class="list-group-item empty-list">
+                    <img src="./img/todo/leaf.svg" alt="Empty" width="48">
+                    <p class="empty-list__title">Список дел пуст</p>
+                </li> -->
+					</ul>
+				</section>
+				<!-- //List of tasks -->
+
+				<!-- Form -->
+				<section class="card card-bottom">
+					<div class="card-header__wrapper">
+						<p class="card-header">Добавить новую задачу</p>
+					</div>
+					<article class="card-body">
+						<form id="form">
+							<div class="form-group">
+								<input type="text" class="form-control" id="taskInput" placeholder="Текст задачи" autocomplete="off" />
+								<small id="emailHelp" class="form-text text-muted">Что делаем?</small>
+							</div>
+							<button type="submit" class="btn task-btn  active">Добавить</button>
+						</form>
+					</article>
+				</section>
+				<!-- //Form  -->
+				<!-- <button id="removeDoneTasks" class="btn btn-secondary mt-4 float-right">Удалить выполненные задачи</button> -->
+			</container>
+		</main>
+
+		<script src="./js/index.bundle.js"></script>
+	</body>
+</html>

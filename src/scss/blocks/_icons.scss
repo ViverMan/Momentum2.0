@@ -1,0 +1,33 @@
+
+.icon {
+	width: 16px;
+	height: 16px;
+}
+
+.weather__img {
+	width: 16px;
+	height: 16px;
+}
+
+.icon--humidity {
+	fill: rgb(255, 255, 255);
+	stroke: rgb(255, 255, 255);
+}
+.icon--wind-speed {
+	fill: rgb(255, 255, 255);
+	stroke: rgb(255, 255, 255);
+}
+.icon--search {
+	fill: #ffffff;
+	width: 16px;
+	height: 16px;
+}
+
+.icon--user {
+	stroke: rgb(26, 134, 235);
+	transition: all 0.2s ease-in;
+
+	&:hover {
+		stroke: rgb(17, 193, 90);
+	}
+}

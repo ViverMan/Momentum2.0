@@ -1,0 +1,118 @@
+
+/* Контейнеры */
+.container {
+	margin: 0 auto;
+	padding: 0 var(--container-padding);
+
+	max-width: var(--container-width);
+	width: 100%;
+}
+
+
+.container-full {
+	// padding: 0 var(--container-padding);
+	max-width: 100%;
+}
+
+.container-small {
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 6px;
+
+	background: hsla(0, 0%, 65%, 0.1) border-box;
+	border-radius: 10px;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .5em 1em rgba(72, 72, 72, 0.6);
+}
+
+.container-todo {
+	position: absolute;
+	z-index: 10;
+	bottom: 5px;
+	right: 5px;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+
+	max-width: 400px;
+	padding: 4px;
+
+	background: hsla(0, 0%, 65%, 0.1) border-box;
+	border-radius: 10px;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .5em 1em rgba(0, 0, 0, 0.6);
+}
+
+.container-left-50 {
+	padding: 0 var(--container-padding);
+	max-width: 50%;
+
+	@include mobile {
+		max-width: 100%;
+	}
+}
+
+.container-right-50 {
+	padding: 0 var(--container-padding);
+	max-width: 50%;
+	margin-left: auto;
+
+	@include mobile {
+		max-width: 100%;
+	}
+}
+
+.container-right {
+	padding-left: calc(
+		(100% - var(--container-width)) / 2 + var(--container-padding)
+	);
+
+	@include tablet {
+		padding-left: var(--container-padding);
+	}
+}
+
+.container-left {
+	padding-right: calc(
+		(100% - var(--container-width)) / 2 + var(--container-padding)
+	);
+
+	@include tablet {
+		padding-right: var(--container-padding);
+	}
+}
+
+.container-half-left {
+	padding-right: calc(
+		(100% - var(--container-width)) / 2 + (var(--container-width) / 2)
+	);
+	padding-left: calc(
+		(100% - var(--container-width)) / 2 + var(--container-padding)
+	);
+
+	@include tablet {
+		padding-left: var(--container-padding);
+	}
+
+	@include mobile {
+		padding: 0 var(--container-padding);
+	}
+}
+
+.container-half-right {
+	padding-left: calc(
+		(100% - var(--container-width)) / 2 + (var(--container-width) / 2)
+	);
+	padding-right: calc(
+		(100% - var(--container-width)) / 2 + var(--container-padding)
+	);
+
+	@include tablet {
+		padding-right: var(--container-padding);
+	}
+
+	@include mobile {
+		padding: 0 var(--container-padding);
+	}
+}

@@ -1,0 +1,34 @@
+.title-1 {
+	font-size: 28px;
+	font-weight: 700;
+	font-family: var(--font-titles);
+	color: var(--color-time);
+	text-shadow: 1px 1px 2px rgb(0, 0, 0);
+	transition: all 0.2s ease-in;
+
+    &:hover {
+		text-shadow: 1px 1px 2px rgb(189, 189, 189), 0 0 1em rgb(155, 155, 155), 0 0 0.2px rgb(201, 201, 201);
+    }
+}
+
+.title-2 {
+	font-size: 18px;
+	font-weight: 700;
+	font-family: var(--font-titles);
+	color: var(--color-time);
+	text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+.title-3 {
+	margin: 1em 0 0.5em;
+	font-size: 26px;
+	font-weight: 700;
+	font-family: var(--font-titles);
+}
+
+.title-4 {
+	margin: 1em 0 0.5em;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: var(--font-titles);
+}
