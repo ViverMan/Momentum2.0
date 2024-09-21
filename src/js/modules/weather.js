@@ -3,15 +3,15 @@ function weather() {
 
     const API_KEY = '81e07743ed08d5f5ad4197ca18dd8075';
 
-    let form = document.querySelector('#weatherID');
-    let city = document.querySelector('.form__input');
+    const form = document.querySelector('#weatherID');
+    const input = document.querySelector('.form__input');
 
     form.onsubmit = submitWeather;
 
     async function submitWeather(e) {
         e.preventDefault();
         //-------------удаляет пробельные символы с начала и конца строки---------//
-        if (city.value === ''.trim()) {
+        if (input.value === ''.trim()) {
             return;
         }
         //------------------------------------------------------------------------//
@@ -20,7 +20,7 @@ function weather() {
         // input.value = ''
 
 
-        const cityInfo = await getGeo(city.value.trim());
+        const cityInfo = await getGeo(input.value.trim());
 
         if (cityInfo.lenght === 0) return;      //--- если ввел ерунду = return
 
@@ -29,7 +29,7 @@ function weather() {
         // console.log(cityInfo[0]['lon']);
 
         //------------Получаю координаты первого города после ввода--------------//
-        let weatherInfo = await getWeather(cityInfo[0]['lat'], cityInfo[0]['lon']);
+        const weatherInfo = await getWeather(cityInfo[0]['lat'], cityInfo[0]['lon']);
         //-----------------------------------------------------------------------//
         // console.log(weatherInfo);
 
@@ -52,29 +52,29 @@ function weather() {
     }
 
     async function getGeo(name) {
-        let geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=5&appid=${API_KEY}`;
+        const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=5&appid=${API_KEY}`;
 
         // let geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${name},RU&limit=5&appid=${API_KEY}`;
 
-        let response = await fetch(geoUrl);
-        let data = await response.json();
+        const response = await fetch(geoUrl);
+        const data = await response.json();
         return data;
     }
 
     async function getWeather(lat, lon) {
-        let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`;
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`;
 
-        let response = await fetch(weatherUrl);
-        let data = await response.json();
+        const response = await fetch(weatherUrl);
+        const data = await response.json();
         return data;
     }
 
     function renderWeatherData(data) {
-        let temp = document.querySelector('.weather__temp');
-        let city = document.querySelector('.weather__city');
-        let humidity = document.querySelector('#humidity');
-        let wind = document.querySelector('#wind');
-        let img = document.querySelector('.weather__img');
+        const temp = document.querySelector('.weather__temp');
+        const city = document.querySelector('.weather__city');
+        const humidity = document.querySelector('#humidity');
+        const wind = document.querySelector('#wind');
+        const img = document.querySelector('.weather__img');
 
 
         temp.innerText = Math.round(data.temp) + '°c';
