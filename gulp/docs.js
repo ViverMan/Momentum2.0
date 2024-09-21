@@ -3,7 +3,7 @@ const replace = require('gulp-replace');
 
 // HTML
 const fileInclude = require('gulp-file-include');
-const htmlclean = require('gulp-htmlclean');
+// const htmlclean = require('gulp-htmlclean'); // сжатие HTML
 const webpHTML = require('gulp-webp-retina-html');
 const typograf = require('gulp-typograf');
 
@@ -11,7 +11,7 @@ const typograf = require('gulp-typograf');
 const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
-const csso = require('gulp-csso');
+// const csso = require('gulp-csso'); // сжатие CSS
 // const webImagesCSS = require('gulp-web-images-css');  //Вывод WEBP-изображений
 
 const server = require('gulp-server-livereload');
@@ -22,7 +22,7 @@ const groupMedia = require('gulp-group-css-media-queries');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const webpack = require('webpack-stream');
-const babel = require('gulp-babel');
+// const babel = require('gulp-babel');
 const changed = require('gulp-changed');
 
 // Images
@@ -70,7 +70,7 @@ gulp.task('html:docs', function () {
 			.pipe(plumber(plumberNotify('HTML')))
 			.pipe(fileInclude(fileIncludeSetting))
 			.pipe(
-				replace(/<img(?:.|\n|\r)*?>/g, function(match) {
+				replace(/<img(?:.|\n|\r)*?>/g, function (match) {
 					return match
 						.replace(/\r?\n|\r/g, '')
 						.replace(/\s{2,}/g, ' ');
@@ -101,7 +101,7 @@ gulp.task('html:docs', function () {
 					},
 				})
 			)
-			.pipe(htmlclean())
+			// .pipe(htmlclean()) // сжатие HTML
 			.pipe(gulp.dest('./docs/'))
 	);
 });
@@ -128,7 +128,7 @@ gulp.task('sass:docs', function () {
 					'$1$2$3$4$6$1'
 				)
 			)
-			.pipe(csso())
+			// .pipe(csso())
 			.pipe(sourceMaps.write())
 			.pipe(gulp.dest('./docs/css/'))
 	);
@@ -224,7 +224,7 @@ gulp.task('js:docs', function () {
 		.src('./src/js/*.js')
 		.pipe(changed('./docs/js/'))
 		.pipe(plumber(plumberNotify('JS')))
-		.pipe(babel())
+		// .pipe(babel())
 		.pipe(webpack(require('./../webpack.config.js')))
 		.pipe(gulp.dest('./docs/js/'));
 });

@@ -9,7 +9,7 @@ const sourceMaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const webpack = require('webpack-stream');
-const babel = require('gulp-babel');
+// const babel = require('gulp-babel');
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 const typograf = require('gulp-typograf');
@@ -56,7 +56,7 @@ gulp.task('html:dev', function () {
 		.pipe(plumber(plumberNotify('HTML')))
 		.pipe(fileInclude(fileIncludeSetting))
 		.pipe(
-			replace(/<img(?:.|\n|\r)*?>/g, function(match) {
+			replace(/<img(?:.|\n|\r)*?>/g, function (match) {
 				return match.replace(/\r?\n|\r/g, '').replace(/\s{2,}/g, ' ');
 			})
 		) //удаляет лишние пробелы и переводы строк внутри тега <img>
