@@ -93,8 +93,8 @@ function weather() {
         }
 
         if (fileNames[data.info]) {
-            img.src = `./../../img/weather-app/${fileNames[data.info]}.png`;
-            img.srcset = `./../../img/weather-app/${fileNames[data.info]}@2x.png`;
+            img.src = `./img/weather-app/${fileNames[data.info]}.png`;
+            img.srcset = `./img/weather-app/${fileNames[data.info]}@2x.png`;
         }
 
         // console.log(data.info);
