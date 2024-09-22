@@ -1,39 +1,36 @@
-<container class="container-todo" id="taskList">
-
-        <a class="todo-head" href="#!">
-            <section class="task-List-title">
-                <h1 class="title-1">ToDo</h1>
+<section class="task-manager">
+    <container class="container-todo" id="taskList">
+    
+            <section class="task-list-title">
+                <a class="todo-head" href="#!">
+                    <h1 class="title-1">ToDo</h1>
+                </a>
             </section>
-        </a>
-
-        <!-- List of tasks -->
-        <section class="card">
-            <ul id="tasksList" class="list-group">
-
-                <!-- <li id="emptyList" class="list-group-item empty-list">
-                    <img src="./../../img/todo/leaf.svg" alt="Empty" width="48">
-                    <p class="empty-list__title">Список дел пуст</p>
-                </li> -->
-
-            </ul>
-        </section>
-        <!-- //List of tasks -->
-
-        <!-- Form -->
-        <section class="card card-bottom">
-            <div class="card-header__wrapper">
-                <p class="card-header">Добавить новую задачу</p>
-            </div>
-            <article class="card-body">
-                <form id="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="taskInput" placeholder="Текст задачи" autocomplete="off">
-                        <small id="emailHelp" class="form-text text-muted">Что делаем?</small>
-                    </div>
-                    <button type="submit" class="btn task-btn  active">Добавить</button>
-                </form>
-            </article>
-        </section>
-        <!-- //Form  -->
-        <!-- <button id="removeDoneTasks" class="btn btn-secondary mt-4 float-right">Удалить выполненные задачи</button> -->
-</container>
+    
+            <!-- List of tasks -->
+            <section class="card">
+                <ul id="tasksList" class="list-group">
+    
+                </ul>
+            </section>
+            <!-- //List of tasks -->
+    
+            <!-- Form -->
+            <section class="card card-bottom">
+                <div class="card-header__wrapper">
+                    <p class="card-header">Добавить новую задачу</p>
+                </div>
+                <article class="card-body">
+                    <form id="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="taskInput" placeholder="Текст задачи" autocomplete="off">
+                            <small id="emailHelp" class="form-text text-muted">Что делаем?</small>
+                        </div>
+                        <button type="submit" class="btn task-btn  active">Добавить</button>
+                    </form>
+                </article>
+            </section>
+            <!-- //Form  -->
+            <!-- <button id="removeDoneTasks" class="btn btn-secondary mt-4 float-right">Удалить выполненные задачи</button> -->
+    </container>
+</section>

@@ -8,6 +8,8 @@
 
 // Мобильная навигация
 
+import todo from './modules/slide-todo.js';
+todo();
 
 import week from './modules/day-week.js';
 week();
@@ -21,8 +23,6 @@ weather();
 import taskManager from './modules/task-manager.js';
 taskManager();
 
-import todo from './modules/slide-todo.js';
-todo();
 
 // import slider from './modules/slider.js';
 // slider();

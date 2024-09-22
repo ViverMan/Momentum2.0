@@ -1,8 +1,12 @@
+.task-manager {
+}
 .todo-head {
-    width: fit-content;
+    width: 100%;
+    text-align: center;
 }
 .card {
     display: none;
+    max-width: 320px;
     padding: 5px;
     border-radius: 5px;
     background: hsla(0, 0%, 65%, 0.1) border-box;
@@ -60,6 +64,11 @@
     display: flex;
     gap: 6px;
     margin-left: auto;
+
+    button {
+        width: 22px;
+        height: 26px;
+    }
 }
 .card-header {
     font-size: 16px;

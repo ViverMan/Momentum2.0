@@ -28,15 +28,14 @@
 }
 
 .container-todo {
-	position: absolute;
+	position: fixed;
 	z-index: 10;
 	bottom: 5px;
 	right: 5px;
 	display: flex;
 	gap: 10px;
 	flex-direction: column;
-
-	max-width: 400px;
+	
 	padding: 4px;
 
 	background: hsla(0, 0%, 65%, 0.1) border-box;
@@ -55,7 +54,28 @@
         -webkit-filter: blur(20px);
         filter: blur(20px);
     }
+	@include mobile {
+		// position: fixed;
+
+		// left: 50%;
+		// top: 50%;
+		// transform: translate(-50%, -50%);
+
+		
+		
+	}
+
 }
+
+// .todo-active {
+// 	position: absolute;
+// 	left: 50%;
+// 	top: 30%;
+// 	transform: translate(-50%, -40%);
+// 	width: 90%;
+// }
+
+
 
 .container-left-50 {
 	padding: 0 var(--container-padding);

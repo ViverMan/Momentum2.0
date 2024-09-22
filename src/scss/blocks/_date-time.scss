@@ -13,7 +13,7 @@
     box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .5em 1em rgba(0, 0, 0, 0.6);
 
     @include mobile {
-        top: 25%;
+        top: 30%;
     }
 
     
@@ -43,8 +43,12 @@
     gap: 10px;
     flex-wrap: wrap;
 
+    @include mobile {
+        gap: 4px;
+    }
+
     .date-time__item {
-        font-size: clamp(1.3rem, 2vw, 5rem);
+        font-size: clamp(1rem, 2vw, 5rem);
     }
 }
 
@@ -52,7 +56,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(4rem, 10vw, 15rem);
+    font-size: clamp(2.8rem, 10vw, 15rem);
     color: var(--color-time);
 
     p {

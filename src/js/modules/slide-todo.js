@@ -4,9 +4,11 @@ function todo() {
     let toDoHead = document.querySelector('.todo-head');
     let cardDown = document.querySelector('.card');
     let cardDownBottom = document.querySelector('.card-bottom');
+    let activeTodo = document.querySelector('.container-todo');
 
 
     toDoHead.addEventListener('click', function () {
+
         if (cardDown.style.display == 'block') {
             cardDown.style.display = 'none';
         }
