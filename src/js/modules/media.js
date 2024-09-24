@@ -13,7 +13,7 @@ function media() {
 
     function mediaChange(e) {
         if (e.matches) {
-            btnBlock.setAttribute('disabled', '');
+            // btnBlock.setAttribute('disabled', '');
 
             toDoHead.addEventListener('click', function () {
                 toDoContainer.classList.toggle('todo-active');
@@ -29,7 +29,7 @@ function media() {
 
     function mediaChange2(e) {
         if (e.matches) {
-            btnBlock.removeAttribute('disabled', '');
+            // btnBlock.removeAttribute('disabled', '');
 
             toDoContainer.classList.remove('todo-active');
 
