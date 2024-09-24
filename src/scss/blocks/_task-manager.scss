@@ -83,6 +83,10 @@
         border-bottom: 1px solid #f8f8f8;
         padding: 4px 10px;
     }
+
+    @include mobile {
+        font-size: 14px;
+    }
 }
 .card-body {
     flex-direction: column;

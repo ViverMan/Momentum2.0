@@ -121,13 +121,13 @@ function weather() {
 
     }
     //------------- ввод Краснодар по умолчанию -------------//
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     let inp = document.querySelector('.form__input');
+    document.addEventListener('DOMContentLoaded', () => {
+        let inp = document.querySelector('.form__input');
 
-    //     if (inp) inp.value = 'Краснодар';
+        if (inp) inp.value = 'Краснодар';
 
-    //     document.querySelectorAll('.form__btn').forEach(b => b.click());
-    // });
+        document.querySelectorAll('.form__btn').forEach(b => b.click());
+    });
     //-------------------------------------------------------//
 
     const localQuery = localStorage.getItem('name');

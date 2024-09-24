@@ -3,7 +3,7 @@ function media() {
 
     let mediaQuery = window.matchMedia('(max-width: 820px)');
     let mediaQuery2 = window.matchMedia('(min-width: 821px)');
-    let btnBlock = document.querySelector('.weather__items-links');
+    // let btnBlock = document.querySelector('.weather__items-links');
     let toDoHead = document.querySelector('.todo-head');
     let toDoContainer = document.querySelector('.container-todo');
     let time = document.querySelector('.container');
