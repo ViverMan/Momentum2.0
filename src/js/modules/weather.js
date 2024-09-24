@@ -6,6 +6,31 @@ function weather() {
     const form = document.querySelector('#weatherID');
     const input = document.querySelector('.form__input');
 
+    let dataWeather = [];
+
+
+    if (localStorage.getItem('dataWeather')) {
+        dataWeather = JSON.parse(localStorage.getItem('dataWeather'));
+
+        dataWeather.forEach(function (data) {
+            renderWeatherData(data);
+        })
+
+    };
+
+    console.log(dataWeather.length);
+
+    if (dataWeather.length < 1) {
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // let inp = document.querySelector('.form__input');
+
+            if (city) city.value = 'Краснодар';
+
+            document.querySelectorAll('.form__btn').forEach(b => b.click());
+        });
+    }
+
     form.onsubmit = submitWeather;
 
     async function submitWeather(e) {
@@ -46,7 +71,9 @@ function weather() {
             wind: weatherInfo.wind.speed,
             info: weatherInfo.weather[0]['main']
         };
-        // console.log(weatherData.info);
+
+        dataWeather.push(weatherData);
+        saveToLocalStorage();
 
         renderWeatherData(weatherData);
     }
@@ -108,7 +135,7 @@ function weather() {
 
         if (fileNames[data.info]) {
             img.src = `./img/weather-app/${fileNames[data.info]}.png`;
-            img.srcset = `./img/weather-app/${fileNames[data.info]}@2x.png`;
+            // img.srcset = `./img/weather-app/${fileNames[data.info]}@2x.png`;
         }
 
         if (fileNames[data.info]) {
@@ -120,18 +147,10 @@ function weather() {
 
 
     }
-    //------------- ввод Краснодар по умолчанию -------------//
-    document.addEventListener('DOMContentLoaded', () => {
-        let inp = document.querySelector('.form__input');
 
-        if (inp) inp.value = 'Краснодар';
-
-        document.querySelectorAll('.form__btn').forEach(b => b.click());
-    });
-    //-------------------------------------------------------//
-
-    const localQuery = localStorage.getItem('name');
-    input.value = localQuery !== null ? localQuery : '';
+    function saveToLocalStorage() {
+        localStorage.setItem('dataWeather', JSON.stringify(dataWeather));
+    };
 }
 
 export default weather;
