@@ -52,7 +52,7 @@ function weather() {
     }
 
     async function getGeo(name) {
-        const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=5&appid=${API_KEY}`;
+        const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=5&appid=${API_KEY}`;
 
         // let geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${name},RU&limit=5&appid=${API_KEY}`;
 
@@ -62,7 +62,7 @@ function weather() {
     }
 
     async function getWeather(lat, lon) {
-        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`;
+        const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`;
 
         const response = await fetch(weatherUrl);
         const data = await response.json();
@@ -76,11 +76,25 @@ function weather() {
         const wind = document.querySelector('#wind');
         const img = document.querySelector('.weather__img');
 
+        const temp2 = document.querySelector('.weather__temp-big');
+        const city2 = document.querySelector('.weather__city-big');
+        const humidity2 = document.querySelector('#humidity2');
+        const wind2 = document.querySelector('#wind2');
+        const img2 = document.querySelector('.weather__img-big');
+
 
         temp.innerText = Math.round(data.temp) + '°c';
         city.innerText = data.name;
         humidity.innerText = data.humidity + '%';
         wind.innerText = data.wind + ' м/с';
+
+        temp2.innerText = Math.round(data.temp) + '°c';
+        city2.innerText = data.name;
+        humidity2.innerText = data.humidity + '%';
+        wind2.innerText = data.wind + ' м/с';
+
+        localStorage.setItem('name', data.name);
+        console.log(localStorage);
 
         const fileNames = {
             'Clouds': 'clouds',
@@ -97,20 +111,27 @@ function weather() {
             img.srcset = `./img/weather-app/${fileNames[data.info]}@2x.png`;
         }
 
+        if (fileNames[data.info]) {
+            img2.src = `./img/weather-app-big/${fileNames[data.info]}.png`;
+            // img2.srcset = `./img/weather-app/${fileNames[data.info]}@2x.png`;
+        }
+
         // console.log(data.info);
 
 
     }
     //------------- ввод Краснодар по умолчанию -------------//
-    document.addEventListener('DOMContentLoaded', () => {
-        let inp = document.querySelector('.form__input');
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     let inp = document.querySelector('.form__input');
 
-        if (inp) inp.value = 'Краснодар';
+    //     if (inp) inp.value = 'Краснодар';
 
-        document.querySelectorAll('.form__btn').forEach(b => b.click());
-
-    });
+    //     document.querySelectorAll('.form__btn').forEach(b => b.click());
+    // });
     //-------------------------------------------------------//
+
+    const localQuery = localStorage.getItem('name');
+    input.value = localQuery !== null ? localQuery : '';
 }
 
 export default weather;

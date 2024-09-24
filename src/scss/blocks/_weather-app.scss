@@ -135,6 +135,11 @@
     font-size: 16px;
 }
 .weather__items {
+    // display: flex;
+    // justify-content: space-between;
+    // gap: 10px;
+}
+.weather__items-links {
     display: flex;
     justify-content: space-between;
     gap: 10px;

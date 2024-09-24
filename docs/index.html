@@ -16,6 +16,7 @@
         <div class="container-full">
     <div class="slide-container">
         <div class="slide" id="imageID"></div>
+        <!-- <div class="slide slide-weather"></div> -->
     </div>
 </div>
         <div class="container">
@@ -50,87 +51,123 @@
             </form>
 
             <section class="weather__items">
+                <button class="weather__items-links">
+                    <section class="item">
+                        <div class="item__img">
+                            <img class="weather__img" src="" alt="" srcset="">
+                        </div>
+                        <div class="weather__temp item__value"></div>
+                        <div class="weather__city item__title"></div>
+                    </section>
 
-                <section class="item">
-                    <div class="item__img">
-                        <img class="weather__img" src="" alt="icon" srcset="">
-                    </div>
-                    <div class="weather__temp item__value"></div>
-                    <div class="weather__city item__title"></div>
-                </section>
+                    <section class="item">
+                        <div class="item__img">
+                            <svg class="icon icon--humidity">
+                                <use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
+                            </svg>
+                        </div>
+                        <div class="item__value" id="humidity">
 
-                <section class="item">
-                    <div class="item__img">
-                        <svg class="icon icon--humidity">
-                            <use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
-                        </svg>
-                    </div>
-                    <div class="item__value" id="humidity">
+                        </div>
+                        <div class="item__title">
+                            Влажность
+                        </div>
+                    </section>
 
-                    </div>
-                    <div class="item__title">
-                        Влажность
-                    </div>
-                </section>
+                    <section class="item">
+                        <div class="item__img">
+                            <svg class="icon icon--wind-speed">
+                                <use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
+                            </svg>
+                        </div>
+                        <div class="item__value" id="wind">
 
-                <section class="item">
-                    <div class="item__img">
-                        <svg class="icon icon--wind-speed">
-                            <use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
-                        </svg>
-                    </div>
-                    <div class="item__value" id="wind">
-
-                    </div>
-                    <div class="item__title">
-                        Ветер
-                    </div>
-                </section>
-
+                        </div>
+                        <div class="item__title">
+                            Ветер
+                        </div>
+                    </section>
+                </button>
             </section>
         </div>
     </container>
 </section>
 
-        <container class="container-todo" id="taskList">
-
-        <a class="todo-head" href="#!">
-            <section class="task-List-title">
-                <h1 class="title-1">ToDo</h1>
+    <div class="weather-app-big">
+        <div class="weather-app-big__wrapper">
+            <section class="item grid-item-1">
+                <div class="item__img">
+                    <img class="weather__img-big" src="" alt="" srcset="">
+                </div>
+                <div class="weather__temp-big item__value"></div>
+                <div class="weather__city-big item__title"></div>
             </section>
-        </a>
 
-        <!-- List of tasks -->
-        <section class="card">
-            <ul id="tasksList" class="list-group">
+            <section class="item grid-item-2">
+                <div class="item__img">
+                    <svg class="icon icon--humidity">
+                        <use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
+                    </svg>
+                </div>
+                <div class="item__value" id="humidity2">
 
-                <!-- <li id="emptyList" class="list-group-item empty-list">
-                    <img src="./img/todo/leaf.svg" alt="Empty" width="48">
-                    <p class="empty-list__title">Список дел пуст</p>
-                </li> -->
+                </div>
+                <div class="item__title">
+                    Влажность
+                </div>
+            </section>
+            <section class="item grid-item-3">
+                <div class="item__img">
+                    <svg class="icon icon--wind-speed">
+                        <use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
+                    </svg>
+                </div>
+                <div class="item__value" id="wind2">
 
-            </ul>
-        </section>
-        <!-- //List of tasks -->
+                </div>
+                <div class="item__title">
+                    Ветер
+                </div>
+            </section>
+        </div>
+    </div>
 
-        <!-- Form -->
-        <section class="card card-bottom">
-            <div class="card-header__wrapper">
-                <p class="card-header">Добавить новую задачу</p>
-            </div>
-            <article class="card-body">
-                <form id="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="taskInput" placeholder="Текст задачи" autocomplete="off">
-                        <small id="emailHelp" class="form-text text-muted">Что делаем?</small>
-                    </div>
-                    <button type="submit" class="btn task-btn  active">Добавить</button>
-                </form>
-            </article>
-        </section>
-        <!-- //Form  -->
-        <!-- <button id="removeDoneTasks" class="btn btn-secondary mt-4 float-right">Удалить выполненные задачи</button> -->
-</container>
+        <section class="task-manager">
+    <container class="container-todo" id="taskList">
+
+            <section class="task-list-title">
+                <a class="todo-head" href="#!">
+                    <h1 class="title-1">ToDo</h1>
+                </a>
+            </section>
+
+            <!-- List of tasks -->
+            <section class="card">
+                <ul id="tasksList" class="list-group">
+
+                </ul>
+            </section>
+            <!-- //List of tasks -->
+
+            <!-- Form -->
+            <section class="card card-bottom">
+                <div class="card-header__wrapper">
+                    <p class="card-header">Добавить новую задачу</p>
+                </div>
+                <article class="card-body">
+                    <form id="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="taskInput" placeholder="Текст задачи" autocomplete="off">
+                            <small id="emailHelp" class="form-text text-muted">Что делаем?</small>
+                        </div>
+                        <button type="submit" class="btn task-btn  active">Добавить</button>
+                    </form>
+                </article>
+            </section>
+            <!-- //Form  -->
+            <!-- <button id="removeDoneTasks" class="btn btn-secondary mt-4 float-right">Удалить выполненные задачи</button> -->
+    </container>
+</section>
     </main>
 
     <script src="./js/index.bundle.js"></script>

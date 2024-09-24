@@ -1,4 +1,3 @@
-// import imageJsonFile from '../../html/data/image.json';
 
 function time() {
 

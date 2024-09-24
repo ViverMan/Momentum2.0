@@ -13,44 +13,46 @@
             
             
             <section class="weather__items">
+                <button class="weather__items-links">
+                    <section class="item">
+                        <div class="item__img">
+                            <img class="weather__img" src="" alt="" srcset="">
+                        </div>
+                        <div class="weather__temp item__value"></div>
+                        <div class="weather__city item__title"></div>
+                    </section>
+                    
+                    <section class="item">
+                        <div class="item__img">
+                            <svg class="icon icon--humidity">
+                                <use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
+                            </svg>
+                        </div>
+                        <div class="item__value" id="humidity">
+                            
+                        </div>
+                        <div class="item__title">
+                            Влажность
+                        </div>
+                    </section>
 
-                <section class="item">
-                    <div class="item__img">
-                        <img class="weather__img" src="" alt="icon" srcset="">
-                    </div>
-                    <div class="weather__temp item__value"></div>
-                    <div class="weather__city item__title"></div>
-                </section>
-                
-                <section class="item">
-                    <div class="item__img">
-                        <svg class="icon icon--humidity">
-                            <use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
-                        </svg>
-                    </div>
-                    <div class="item__value" id="humidity">
-                        
-                    </div>
-                    <div class="item__title">
-                        Влажность
-                    </div>
-                </section>
-
-                <section class="item">
-                    <div class="item__img">
-                        <svg class="icon icon--wind-speed">
-                            <use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
-                        </svg>
-                    </div>
-                    <div class="item__value" id="wind">
-                        
-                    </div>
-                    <div class="item__title">
-                        Ветер
-                    </div>
-                </section>
-
+                    <section class="item">
+                        <div class="item__img">
+                            <svg class="icon icon--wind-speed">
+                                <use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
+                            </svg>
+                        </div>
+                        <div class="item__value" id="wind">
+                            
+                        </div>
+                        <div class="item__title">
+                            Ветер
+                        </div>
+                    </section>
+                </button>
             </section>
         </div>
     </container>
 </section>
+
+@@include('weather-app-big.html')

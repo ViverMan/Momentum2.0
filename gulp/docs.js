@@ -22,7 +22,7 @@ const groupMedia = require('gulp-group-css-media-queries');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const webpack = require('webpack-stream');
-// const babel = require('gulp-babel');
+const babel = require('gulp-babel');
 const changed = require('gulp-changed');
 
 // Images
@@ -224,7 +224,7 @@ gulp.task('js:docs', function () {
 		.src('./src/js/*.js')
 		.pipe(changed('./docs/js/'))
 		.pipe(plumber(plumberNotify('JS')))
-		// .pipe(babel())
+		.pipe(babel())
 		.pipe(webpack(require('./../webpack.config.js')))
 		.pipe(gulp.dest('./docs/js/'));
 });
