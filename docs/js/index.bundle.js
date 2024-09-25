@@ -115,7 +115,7 @@ function weather() {
     }
 
     async function getGeo(name) {
-        const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=2&appid=${API_KEY}`;
+        const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=2&appid=${API_KEY}`;
 
         // let geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${name},RU&limit=5&appid=${API_KEY}`;
 
