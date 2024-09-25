@@ -25,7 +25,7 @@ function weather() {
         document.addEventListener('DOMContentLoaded', () => {
             // let inp = document.querySelector('.form__input');
 
-            if (city) city.value = 'Краснодар';
+            if (input) input.value = 'Краснодар';
 
             document.querySelectorAll('.form__btn').forEach(b => b.click());
         });
@@ -79,7 +79,7 @@ function weather() {
     }
 
     async function getGeo(name) {
-        const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=5&appid=${API_KEY}`;
+        const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=2&appid=${API_KEY}`;
 
         // let geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${name},RU&limit=5&appid=${API_KEY}`;
 
@@ -89,7 +89,9 @@ function weather() {
     }
 
     async function getWeather(lat, lon) {
-        const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`;
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`;
+
+        // const weatherUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ru`;
 
         const response = await fetch(weatherUrl);
         const data = await response.json();
