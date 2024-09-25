@@ -7,7 +7,6 @@
 // });
 
 
-
 import todo from './modules/slide-todo.js';
 todo();
 
@@ -28,3 +27,6 @@ taskManager();
 
 import media from './modules/media.js';
 media();
+
+import popup from './modules/pop-up.js';
+popup();

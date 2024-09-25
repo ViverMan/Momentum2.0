@@ -167,10 +167,10 @@ function taskManager() {
                         <span class="${cssClass}">${task.text}</span>
                         <div class="task-item__buttons">
                             <button type="button" data-action="done" class="btn-action">
-                                <img src="./../../img/todo/tick.svg" alt="Done" width="18" height="18">
+                                <img src="./img/todo/tick.svg" alt="Done" width="18" height="18">
                             </button>
                             <button type="button" data-action="delete" class="btn-action">
-                                <img src="./../../img/todo/cross.svg" alt="Done" width="18" height="18">
+                                <img src="./img/todo/cross.svg" alt="Done" width="18" height="18">
                             </button>
                         </div>
                     </li>`;

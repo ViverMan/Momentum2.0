@@ -30,10 +30,10 @@
         filter: blur(20px);
     }
 
-    @include mobileS {
-        flex-direction: column;
-        align-items: stretch;
-    }
+    // @include mobileS {
+    //     flex-direction: column;
+    //     align-items: stretch;
+    // }
 }
 .weather__form {
     position: relative;
@@ -68,9 +68,9 @@
         transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
     }
 
-    @include mobileS {
-        width: 250px;
-    }
+    // @include mobileS {
+    //     width: 240px;
+    // }
 
     // color: var(--text-color-white);
     // flex-grow: 1;
@@ -115,7 +115,7 @@
     }
 
     &:focus ~ .form__input{
-        width: 250px;
+        width: 235px;
         border-radius: 0px;
         background-color: transparent;
         transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
@@ -166,4 +166,8 @@
     text-align: center;
     font-weight: 300;
     font-size: 14px;
+}
+
+.disp-none {
+    display: none;
 }

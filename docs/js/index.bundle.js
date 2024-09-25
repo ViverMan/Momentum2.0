@@ -45,6 +45,7 @@ function weather() {
     let dataWeather = [];
 
 
+
     if (localStorage.getItem('dataWeather')) {
         dataWeather = JSON.parse(localStorage.getItem('dataWeather'));
 
@@ -54,7 +55,7 @@ function weather() {
 
     };
 
-    console.log(dataWeather.length);
+    // console.log(dataWeather.length);
 
     if (dataWeather.length < 1) {
 
@@ -85,7 +86,6 @@ function weather() {
 
         if (cityInfo.lenght === 0) return;      //--- если ввел ерунду = return
 
-        console.log(cityInfo);
         // console.log(cityInfo[0]['lat']);
         // console.log(cityInfo[0]['lon']);
 
@@ -159,7 +159,6 @@ function weather() {
         wind2.innerText = data.wind + ' м/с';
 
         localStorage.setItem('name', data.name);
-        console.log(localStorage);
 
         const fileNames = {
             'Clouds': 'clouds',
@@ -495,10 +494,10 @@ function taskManager() {
                         <span class="${cssClass}">${task.text}</span>
                         <div class="task-item__buttons">
                             <button type="button" data-action="done" class="btn-action">
-                                <img src="./../../img/todo/tick.svg" alt="Done" width="18" height="18">
+                                <img src="./img/todo/tick.svg" alt="Done" width="18" height="18">
                             </button>
                             <button type="button" data-action="delete" class="btn-action">
-                                <img src="./../../img/todo/cross.svg" alt="Done" width="18" height="18">
+                                <img src="./img/todo/cross.svg" alt="Done" width="18" height="18">
                             </button>
                         </div>
                     </li>`;
@@ -554,6 +553,103 @@ function media() {
 };
 
 /* harmony default export */ var modules_media = (media);
+;// CONCATENATED MODULE: ./src/js/modules/pop-up.js
+function popup() {
+
+    // let delayPopup = 3000;
+    // setTimeout("document.querySelector('#pop-up').style.display = 'block'", delayPopup);
+
+
+
+
+
+
+    let localStorName = [];
+
+    if (localStorage.getItem('localStorName')) {
+        localStorName = JSON.parse(localStorage.getItem('localStorName'));
+
+        console.log(localStorName.length);
+
+        renderPopUp();
+    };
+
+    function renderPopUp() {
+        if (localStorName.length >= 1) {
+
+            let popWrapper = document.querySelector('.pop-up__wrapper');
+            popWrapper.style.display = 'none';
+
+            //-- получаю имя из localStorName кот в localStor
+            const keyIsExist = localStorName.find(el => Object.keys(el).includes('names')).names;
+
+            let text = document.querySelector('.item-text');
+
+            let today = new Date();
+            let hour = today.getHours();
+
+            if (hour >= 0) {
+                text.innerText = `Сладких снов, ${keyIsExist}`;
+            };
+
+            if (hour >= 6) {
+                text.innerText = `Доброе утро, ${keyIsExist}.`;
+            };
+
+            if (hour >= 12) {
+                text.innerText = `Доброго дня, ${keyIsExist}.`;
+            };
+
+            if (hour >= 18) {
+                text.innerText = `Доброго вечера, ${keyIsExist}.`;
+            };
+        }
+        opas();
+    }
+
+    setTimeout(function () {
+        let popUp = document.querySelector('.container__pop-up');
+
+        popUp.classList.add('pop-up-vis')
+    }, 2000);
+
+
+    let popBtn = document.querySelector('.pop-btn');
+    popBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        let popInput = document.querySelector('.pop-input');
+
+        let addName = popInput.value;
+
+        if (addName == '') {
+            return;
+        };
+
+        let localName = {
+            names: addName
+        }
+
+        localStorName.push(localName);
+
+        saveToLocalStorage();
+
+
+        renderPopUp();
+        opas();
+    })
+
+    function opas() {
+        let titleMain = document.querySelector('.pop-up__title-main');
+        titleMain.classList.add('disp-flex');
+    }
+
+    function saveToLocalStorage() {
+        localStorage.setItem('localStorName', JSON.stringify(localStorName));
+    };
+}
+
+/* harmony default export */ var pop_up = (popup);
 ;// CONCATENATED MODULE: ./src/js/index.js
 // Галерея и лайтбоксы от Fancybox
 // import { Fancybox } from '@fancyapps/ui';
@@ -562,7 +658,6 @@ function media() {
 // Fancybox.bind('[data-fancybox]', {
 // 	// Your custom options
 // });
-
 
 
 
@@ -585,5 +680,8 @@ task_manager();
 
 
 modules_media();
+
+
+pop_up();
 /******/ })()
 ;

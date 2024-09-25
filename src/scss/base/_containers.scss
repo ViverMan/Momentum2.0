@@ -42,6 +42,10 @@
 	border-radius: 10px;
     box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .5em 1em rgba(0, 0, 0, 0.6);
 
+	@include mobile {
+		bottom: 75px;
+	}
+
 	&::before {
         content: '';
         position: absolute;
@@ -54,10 +58,6 @@
 		-webkit-filter: blur(20px);
 		filter: blur(5px);
     }
-
-	@include mobile {
-		bottom: 50px;
-	}
 }
 
 

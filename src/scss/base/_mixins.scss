@@ -23,7 +23,7 @@
 }
 
 @mixin mobileH () {
-    @media (max-height: 412px) {
+    @media (max-height: 418px) {
 		@content;
 	}
 }

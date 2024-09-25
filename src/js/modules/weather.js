@@ -9,6 +9,7 @@ function weather() {
     let dataWeather = [];
 
 
+
     if (localStorage.getItem('dataWeather')) {
         dataWeather = JSON.parse(localStorage.getItem('dataWeather'));
 
@@ -18,7 +19,7 @@ function weather() {
 
     };
 
-    console.log(dataWeather.length);
+    // console.log(dataWeather.length);
 
     if (dataWeather.length < 1) {
 
@@ -49,7 +50,6 @@ function weather() {
 
         if (cityInfo.lenght === 0) return;      //--- если ввел ерунду = return
 
-        console.log(cityInfo);
         // console.log(cityInfo[0]['lat']);
         // console.log(cityInfo[0]['lon']);
 
@@ -123,7 +123,6 @@ function weather() {
         wind2.innerText = data.wind + ' м/с';
 
         localStorage.setItem('name', data.name);
-        console.log(localStorage);
 
         const fileNames = {
             'Clouds': 'clouds',
