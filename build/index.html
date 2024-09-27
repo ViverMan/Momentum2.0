@@ -129,7 +129,7 @@
 					</section>
 
 					<!-- List of tasks -->
-					<section class="card">
+					<section class="card card-top">
 						<ul id="tasksList" class="list-group"></ul>
 					</section>
 					<!-- //List of tasks -->
@@ -147,6 +147,7 @@
 								</div>
 								<button type="submit" class="btn task-btn  active">Добавить</button>
 							</form>
+							<button type="button" data-action="destroy" class="btn clear-complited-btn">Удалить выполненные</button>
 						</article>
 					</section>
 					<!-- //Form  -->
@@ -157,7 +158,7 @@
 				<section class="pop-up__wrapper">
 					<p class="pop-title">Приветствую, землянин!</p>
 					<form action="" id="popID" class="pop-form">
-						<input class="pop-input" type="text" id="popInputID" placeholder="Введи своё имя, герой!" value="" />
+						<input class="pop-input" type="text" id="popInputID" autocomplete="off" placeholder="Введи своё имя, герой!" value="" />
 						<button class="pop-btn">жми сюда</button>
 					</form>
 				</section>

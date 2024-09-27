@@ -1,19 +1,11 @@
 function popup() {
 
-    // let delayPopup = 3000;
-    // setTimeout("document.querySelector('#pop-up').style.display = 'block'", delayPopup);
-
-
-
-
-
-
     let localStorName = [];
 
     if (localStorage.getItem('localStorName')) {
         localStorName = JSON.parse(localStorage.getItem('localStorName'));
 
-        console.log(localStorName.length);
+        // console.log(localStorName.length);
 
         renderPopUp();
     };
@@ -77,8 +69,6 @@ function popup() {
         localStorName.push(localName);
 
         saveToLocalStorage();
-
-
         renderPopUp();
         opas();
     })

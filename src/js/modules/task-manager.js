@@ -10,6 +10,7 @@ function taskManager() {
     // --- правильное сохранение в LS 
     let tasks = [];
 
+
     if (localStorage.getItem('tasks')) {
         tasks = JSON.parse(localStorage.getItem('tasks'));
 
@@ -17,7 +18,6 @@ function taskManager() {
             renderTask(task);
         })
     };
-
 
 
     checkEmptyList();
@@ -52,6 +52,7 @@ function taskManager() {
         tasks.push(newTask);
         // -- добавляем задачу в хранилище LocalStorage
         saveToLocalStorage();
+
         // -- рендерим задачу на страницу
         renderTask(newTask);
         //---очистить поле ввода и вернуть фокус
@@ -64,6 +65,8 @@ function taskManager() {
         //     emptyList.classList.add('displayNone');
         // };
     };
+
+    // console.log(tasks.length);
     //--- функция удаления задачи
     function delTask(event) {
         // --- проверка, что клик был именно по кнопке delete иначе return
@@ -113,7 +116,7 @@ function taskManager() {
             // --- нахожу span с текстом (задачей)
             let parent = event.target.closest('li');
 
-            // -- нахожу ID и индекс задачи в LS и удаляю из массива по индексу 
+            // -- нахожу ID задачи
             let id = Number(parent.id);
 
             // -- нахожу элемент задачи в массиве 
@@ -128,7 +131,6 @@ function taskManager() {
 
             // -- меняю статус на обратный
             el.done = !el.done;
-
             // -- добавляем задачу в хранилище LocalStorage
             saveToLocalStorage();
 
@@ -137,6 +139,28 @@ function taskManager() {
             taskTitle.classList.toggle('task-title--done');
         };
     };
+
+    function destroy() {
+
+        let destroyComplited = document.querySelector('.clear-complited-btn');
+        destroyComplited.addEventListener('click', function () {
+
+            for (let i = 0; i <= tasks.length - 1; i++) {
+
+                let destItem = document.querySelector('.task-title--done');
+
+                if (destItem !== null) {
+                    destItem.closest('.task-item').remove();
+                }
+            }
+            ;
+            tasks = tasks.filter(el => el.done !== true);
+            saveToLocalStorage();
+            checkEmptyList();
+        })
+    }
+    destroy();
+
     //--- функция появления/удаления "Список дел пуст" (первого li) 
     function checkEmptyList() {
         if (tasks.length === 0) {
@@ -155,6 +179,8 @@ function taskManager() {
     //--- функция сохранения в LocalStorage
     function saveToLocalStorage() {
         localStorage.setItem('tasks', JSON.stringify(tasks));
+
+        // console.log(tasks.length);
     };
     //---функция рендера инфы из LocalStorage на страницу
     function renderTask(task) {

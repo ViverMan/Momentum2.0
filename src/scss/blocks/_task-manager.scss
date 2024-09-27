@@ -21,6 +21,10 @@
         max-width: 100%;
     }
 }
+.card-top {
+    max-height: 400px;
+    overflow-y: auto;
+}
 .card-bottom {
     display: none;
 }
@@ -133,26 +137,25 @@
 .btn-action img {
     pointer-events: none;
 }
-.task-btn {
-  padding: 6px 16px;
-  color: var(--color-time);
-  border: 1px solid #ced4da;
-  margin-top: 10px;
-
-  background: hsla(0, 0%, 65%, 0.1) border-box;
-  border-radius: 5px;
-  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .5em 1em rgba(82, 82, 82, 0.6);
-  transition: all 0.2s ease-in;
+.btn {
+    padding: 6px 16px;
+    color: var(--color-time);
+    border: 1px solid #ced4da;
+    margin-top: 10px;
+    width: 100%;
   
-
-    &:hover {
-        color: var(--color-time);
-        background: hsla(0, 0%, 80%, 0.496) border-box;
-    }
+    background: hsla(0, 0%, 65%, 0.1) border-box;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .5em 1em rgba(82, 82, 82, 0.6);
+    transition: all 0.2s ease-in;
+    
+  
+      &:hover {
+          color: var(--color-time);
+          background: hsla(0, 0%, 80%, 0.496) border-box;
+      }
 }
-
-.displayNone {
-    display: none;
+.task-btn {
 }
 
 .empty-list__icon {
@@ -182,4 +185,8 @@
 
 .btn-action img {
   pointer-events: none;
+}
+
+.displayNone {
+    display: none;
 }
