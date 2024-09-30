@@ -196,10 +196,12 @@ function weather() {
 function bigWeather() {
 
     let mediaQuery = window.matchMedia('(max-width: 820px)');
+    let mediaQueryH = window.matchMedia('(max-height: 418px)');
     let time = document.querySelector('.container');
 
     let btn = document.querySelector('.weather__items-links');
     let appBig = document.querySelector('.weather-app-big');
+    let todo = document.querySelector('.container-todo');
 
     btn.addEventListener('click', function () {
         appBig.classList.toggle('app-remove');
@@ -210,12 +212,16 @@ function bigWeather() {
 
             btn.addEventListener('click', function () {
                 time.classList.toggle('disp-none');
+                todo.classList.toggle('disp-none');
             })
         }
-    }
 
+    }
     mediaQuery.addListener(mediaChange)
     mediaChange(mediaQuery)
+
+
+
 };
 
 /* harmony default export */ var weather_big_hiding = (bigWeather);
@@ -223,10 +229,7 @@ function bigWeather() {
 var weekRus_namespaceObject = JSON.parse('["Воскресенье","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"]');
 ;// CONCATENATED MODULE: ./src/html/data/monthRus.json
 var monthRus_namespaceObject = JSON.parse('["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентября","Октябрь","Ноябрь","Декабрь"]');
-;// CONCATENATED MODULE: ./src/html/data/citiesRus.json
-var citiesRus_namespaceObject = JSON.parse('["Калининград","Казань","Киров","Краснодар","Москва","Нижний Новгород","Ростов-на-Дону","Санкт-Петербург","Симферополь","Волгоград","Воронеж","Астрахань","Самара","Саратов","Ульяновск","Челябинск","Пермь","Тюмень","Уфа","Екатеринбург","Омск","Барнаул","Красноярск","Новокузнецк","Новосибирск","Томск","Иркутск","Чита","Хандыга","Якутск","Усть-Нера","Владивосток","Магадан","Сахалин","Среднеколымск","Анадырь","Камчатка"]');
 ;// CONCATENATED MODULE: ./src/js/modules/day-week.js
-
 
 
 
@@ -234,7 +237,6 @@ function week() {
 
     var weekRus = weekRus_namespaceObject;
     var monthRus = monthRus_namespaceObject;
-    var citiesRus = citiesRus_namespaceObject;
 
     var date = new Date();
     var week = date.getDay();

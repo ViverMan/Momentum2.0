@@ -5,13 +5,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <title>Momentum2.0</title>
     <link rel="stylesheet" href="./css/main.css" />
+
+    <link rel="icon" type="image/x-icon" href="./img/favicons/M.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/M.png">
 
 </head>
 
 <body>
-
     <main class="main">
         <div class="container-full">
     <div class="slide-container">
@@ -20,11 +22,11 @@
     </div>
 </div>
         <div class="container">
-    <div class="date-time__wrapper">
-        <div class="date-time__item" >
+    <section class="date-time__wrapper">
+        <article class="date-time__item" >
             <p class="current-time" id="timeNow"></p>
-        </div>
-        <div class="date-time-region">
+        </article>
+        <article class="date-time-region">
             <div class="date-time__item" >
                 <p class="current-day" id="dayNow"></p>
             </div>
@@ -34,11 +36,11 @@
             <div class="date-time__item" >
                 <p class="current-week" id="weekNow"></p>
             </div>
-        </div>
-    </div>
+        </article>
+    </section>
 </div>
         <section class="weather">
-    <container class="container-small">
+    <div class="container-small">
         <div class="weather__wrapper">
 
             <form action="" class="weather__form" id="weatherID">
@@ -52,15 +54,15 @@
 
             <section class="weather__items">
                 <button class="weather__items-links">
-                    <section class="item">
+                    <article class="item">
                         <div class="item__img">
                             <img class="weather__img" src="" alt="" srcset="">
                         </div>
                         <div class="weather__temp item__value"></div>
                         <div class="weather__city item__title"></div>
-                    </section>
+                    </article>
 
-                    <section class="item disp-none">
+                    <article class="item disp-none">
                         <div class="item__img">
                             <svg class="icon icon--humidity">
                                 <use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
@@ -72,9 +74,9 @@
                         <div class="item__title">
                             Влажность
                         </div>
-                    </section>
+                    </article>
 
-                    <section class="item disp-none">
+                    <article class="item disp-none">
                         <div class="item__img">
                             <svg class="icon icon--wind-speed">
                                 <use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
@@ -86,24 +88,24 @@
                         <div class="item__title">
                             Ветер
                         </div>
-                    </section>
+                    </article>
                 </button>
             </section>
         </div>
-    </container>
+    </div>
 </section>
 
     <div class="weather-app-big">
-        <div class="weather-app-big__wrapper">
-            <section class="item grid-item-1">
+        <section class="weather-app-big__wrapper">
+            <article class="item grid-item-1">
                 <div class="item__img">
                     <img class="weather__img-big" src="" alt="" srcset="">
                 </div>
                 <div class="weather__temp-big item__value"></div>
                 <div class="weather__city-big item__title"></div>
-            </section>
+            </article>
 
-            <section class="item grid-item-2">
+            <article class="item grid-item-2">
                 <div class="item__img">
                     <svg class="icon icon--humidity">
                         <use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
@@ -115,8 +117,8 @@
                 <div class="item__title">
                     Влажность
                 </div>
-            </section>
-            <section class="item grid-item-3">
+            </article>
+            <article class="item grid-item-3">
                 <div class="item__img">
                     <svg class="icon icon--wind-speed">
                         <use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
@@ -128,8 +130,8 @@
                 <div class="item__title">
                     Ветер
                 </div>
-            </section>
-        </div>
+            </article>
+        </section>
     </div>
 
         <section class="task-manager">
@@ -165,8 +167,6 @@
                     <button type="button" data-action="destroy" class="btn clear-complited-btn">Удалить выполненные</button>
                 </article>
             </section>
-            <!-- //Form  -->
-            <!-- <button id="removeDoneTasks" class="btn btn-secondary mt-4 float-right">Удалить выполненные задачи</button> -->
     </container>
 </section>
         <div class="container__pop-up" id="pop-up">
@@ -184,7 +184,6 @@
     </section>
 </div>
     </main>
-
     <script src="./js/index.bundle.js"></script>
 </body>
 

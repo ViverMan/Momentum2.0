@@ -1,5 +1,5 @@
 <section class="weather">
-    <container class="container-small">
+    <div class="container-small">
         <div class="weather__wrapper">
 
             <form action="" class="weather__form" id="weatherID">
@@ -14,15 +14,15 @@
             
             <section class="weather__items">
                 <button class="weather__items-links">
-                    <section class="item">
+                    <article class="item">
                         <div class="item__img">
                             <img class="weather__img" src="" alt="" srcset="">
                         </div>
                         <div class="weather__temp item__value"></div>
                         <div class="weather__city item__title"></div>
-                    </section>
+                    </article>
                     
-                    <section class="item disp-none">
+                    <article class="item disp-none">
                         <div class="item__img">
                             <svg class="icon icon--humidity">
                                 <use href="./img/svgsprite/sprite.symbol.svg#humidity"></use>
@@ -34,9 +34,9 @@
                         <div class="item__title">
                             Влажность
                         </div>
-                    </section>
+                    </article>
 
-                    <section class="item disp-none">
+                    <article class="item disp-none">
                         <div class="item__img">
                             <svg class="icon icon--wind-speed">
                                 <use href="./img/svgsprite/sprite.symbol.svg#wind-speed"></use>
@@ -48,11 +48,11 @@
                         <div class="item__title">
                             Ветер
                         </div>
-                    </section>
+                    </article>
                 </button>
             </section>
         </div>
-    </container>
+    </div>
 </section>
 
 @@include('weather-app-big.html')

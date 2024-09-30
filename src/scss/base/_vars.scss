@@ -10,8 +10,17 @@
 
 	--page-bg: #fff;
 	--color-time: #fefefe;
-	--text-color-white: #fefefe;
 	--text-color: #333333;
+	--text-color-white: #fefefe;
+
+	--text-color-done: #26fe58;
+	--text-color-todo: #fefefe;
+	--text-color-placeholder: rgb(219, 219, 219);
+	--color-border-todo: #babbbb;
+
+	--text-color-weather: #fefefe;
+	--color-border-weather: #babbbb;
+
 	--accent: #ac182c;
 	--link-color: #2578c8;
 
@@ -19,9 +28,4 @@
     --laptop-size: 1199px;
 	--tablet-size: 959px;
 	--mobile-size: 599px;
-}
-
-.dark {
-    --page-bg: #252526;
-
 }

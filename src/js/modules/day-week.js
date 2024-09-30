@@ -1,12 +1,10 @@
 import weekJsonFile from '../../html/data/weekRus.json';
 import monthJsonFile from '../../html/data/monthRus.json';
-import citiesJsonFile from '../../html/data/citiesRus.json';
 
 function week() {
 
     var weekRus = weekJsonFile;
     var monthRus = monthJsonFile;
-    var citiesRus = citiesJsonFile;
 
     var date = new Date();
     var week = date.getDay();
