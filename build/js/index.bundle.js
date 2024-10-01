@@ -259,7 +259,7 @@ function week() {
 
 
 ;// CONCATENATED MODULE: ./src/html/data/image.json
-var image_namespaceObject = JSON.parse('["srcset = ./../../img/background/01.jpg 1x, ./../../img/background/01@2x.jpg 2x","srcset = ./../../img/background/02.jpg 1x, ./../../img/background/02@2x.jpg 2x","srcset = ./../../img/background/03.jpg 1x, ./../../img/background/03@2x.jpg 2x","srcset = ./../../img/background/04.jpg 1x, ./../../img/background/04@2x.jpg 2x"]');
+var image_namespaceObject = JSON.parse('["srcset = ./../img/background/01.jpg 1x, ./../img/background/01@2x.jpg 2x","srcset = ./../img/background/02.jpg 1x, ./../img/background/02@2x.jpg 2x","srcset = ./../img/background/03.jpg 1x, ./../img/background/03@2x.jpg 2x","srcset = ./../img/background/04.jpg 1x, ./../img/background/04@2x.jpg 2x"]');
 ;// CONCATENATED MODULE: ./src/js/modules/time.js
 
 
