@@ -21,24 +21,26 @@ function time() {
         let minute = today.getMinutes();
         let second = today.getSeconds();
 
+        console.log(image[0]);
+
         if (hour >= 0) {
-            img.style.backgroundImage = `${image[0]}`
-            imgNext.style.backgroundImage = `${image[2]}`
+            img.srcset = `${image[0]}`
+            imgNext.srcset = `${image[1]}`
         };
 
         if (hour >= 6) {
-            img.style.backgroundImage = `${image[2]}`
-            imgNext.style.backgroundImage = `${image[4]}`
+            img.srcset = `${image[1]}`
+            imgNext.srcset = `${image[2]}`
         };
 
         if (hour >= 12) {
-            img.style.backgroundImage = `${image[4]}`
-            imgNext.style.backgroundImage = `${image[6]}`
+            img.srcset = `${image[2]}`
+            imgNext.srcset = `${image[3]}`
         };
 
         if (hour >= 18) {
-            img.style.backgroundImage = `${image[6]}`
-            imgNext.style.backgroundImage = `${image[0]}`
+            img.srcset = `${image[3]}`
+            imgNext.srcset = `${image[0]}`
         };
 
         hour = checkTime(hour);
