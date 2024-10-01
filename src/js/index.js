@@ -30,3 +30,6 @@ media();
 
 import popup from './modules/pop-up.js';
 popup();
+
+import aphorisms from './modules/aphorisms.js';
+aphorisms();

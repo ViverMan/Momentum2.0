@@ -73,9 +73,19 @@ function popup() {
         opas();
     })
 
+
     function opas() {
         let titleMain = document.querySelector('.pop-up__title-main');
         titleMain.classList.add('disp-flex');
+
+        let aphorismsDisp = document.querySelector('.aphorisms__wrapper');
+        let aphorismsLine = document.querySelector('.aphorisms__line');
+        aphorismsDisp.classList.add('disp-vis');
+        aphorismsLine.classList.add('disp-vis');
+
+        // setTimeout(function () {
+        //     opas()
+        // }, 1000);
     }
 
     function saveToLocalStorage() {
