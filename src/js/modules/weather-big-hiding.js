@@ -8,6 +8,7 @@ function bigWeather() {
     let btn = document.querySelector('.weather__items-links');
     let appBig = document.querySelector('.weather-app-big');
     let todo = document.querySelector('.container-todo');
+    let popup = document.querySelector('.pop-up__title-main');
 
     btn.addEventListener('click', function () {
         appBig.classList.toggle('app-remove');
@@ -19,6 +20,7 @@ function bigWeather() {
             btn.addEventListener('click', function () {
                 time.classList.toggle('disp-none');
                 todo.classList.toggle('disp-none');
+                popup.classList.toggle('disp-none');
             })
         }
 

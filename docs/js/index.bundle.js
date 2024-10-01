@@ -202,6 +202,7 @@ function bigWeather() {
     let btn = document.querySelector('.weather__items-links');
     let appBig = document.querySelector('.weather-app-big');
     let todo = document.querySelector('.container-todo');
+    let popup = document.querySelector('.pop-up__title-main');
 
     btn.addEventListener('click', function () {
         appBig.classList.toggle('app-remove');
@@ -213,6 +214,7 @@ function bigWeather() {
             btn.addEventListener('click', function () {
                 time.classList.toggle('disp-none');
                 todo.classList.toggle('disp-none');
+                popup.classList.toggle('disp-none');
             })
         }
 
@@ -228,7 +230,7 @@ function bigWeather() {
 ;// CONCATENATED MODULE: ./src/html/data/weekRus.json
 var weekRus_namespaceObject = JSON.parse('["Воскресенье","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"]');
 ;// CONCATENATED MODULE: ./src/html/data/monthRus.json
-var monthRus_namespaceObject = JSON.parse('["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентября","Октябрь","Ноябрь","Декабрь"]');
+var monthRus_namespaceObject = JSON.parse('["Января","Февраля","Марта","Апреля","Мая","Июня","Июля","Августа","Сентября","Октября","Ноября","Декабря"]');
 ;// CONCATENATED MODULE: ./src/js/modules/day-week.js
 
 
@@ -256,11 +258,16 @@ function week() {
 /* harmony default export */ var day_week = (week);
 
 
+;// CONCATENATED MODULE: ./src/html/data/image.json
+var image_namespaceObject = JSON.parse('["url(\'./../../img/background/01.jpg\')","url(\'./../../img/background/01@2x.jpg\')","url(\'./../../img/background/02.jpg\')","url(\'./../../img/background/02@2x.jpg\')","url(\'./../../img/background/03.jpg\')","url(\'./../../img/background/03@2x.jpg\')","url(\'./../../img/background/04.jpg\')","url(\'./../../img/background/04@2x.jpg\')"]');
 ;// CONCATENATED MODULE: ./src/js/modules/time.js
+
 
 function time() {
 
     let img = document.querySelector('#imageID');
+    let imgNext = document.querySelector('#nextImageID');
+    let image = image_namespaceObject;
 
     function checkTime(i) {
 
@@ -278,23 +285,23 @@ function time() {
         let second = today.getSeconds();
 
         if (hour >= 0) {
-            img.classList.add('slide1');
-            img.classList.remove('slide4');
+            img.style.backgroundImage = `${image[0]}`
+            imgNext.style.backgroundImage = `${image[2]}`
         };
 
         if (hour >= 6) {
-            img.classList.add('slide2');
-            img.classList.remove('slide1');
+            img.style.backgroundImage = `${image[2]}`
+            imgNext.style.backgroundImage = `${image[4]}`
         };
 
         if (hour >= 12) {
-            img.classList.add('slide3');
-            img.classList.remove('slide2');
+            img.style.backgroundImage = `${image[4]}`
+            imgNext.style.backgroundImage = `${image[6]}`
         };
 
         if (hour >= 18) {
-            img.classList.add('slide4');
-            img.classList.remove('slide3');
+            img.style.backgroundImage = `${image[6]}`
+            imgNext.style.backgroundImage = `${image[0]}`
         };
 
         hour = checkTime(hour);
@@ -309,6 +316,32 @@ function time() {
     }
 
     timeBegan();
+
+    function nextSlide() {
+        let btnOpen = document.querySelector('.next-slide-btn');
+        let btnClose = document.querySelector('.next-slide-close');
+        // let wrapper = document.querySelector('.next-slide__wrapper');
+        let slide = document.querySelector('.next-slide');
+
+        btnOpen.onclick = function () {
+            // wrapper.classList.toggle('action-wrapper');
+            slide.classList.toggle('action-slide');
+            btnOpen.classList.add('next-slide-btn-action');
+            function add() {
+                btnClose.classList.add('close-vis');
+            }
+            setTimeout(add, 1000);
+        }
+        btnClose.onclick = function () {
+            slide.classList.toggle('action-slide');
+            btnClose.classList.remove('close-vis');
+            function remove() {
+                btnOpen.classList.remove('next-slide-btn-action');
+            }
+            setTimeout(remove, 1000);
+        }
+    }
+    nextSlide();
 }
 
 

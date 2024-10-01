@@ -2,31 +2,93 @@
     height: 100vh;
     width: 100%;
 
+    // background-image: url('./../../img/background/01.jpg');
+
+    
+
     background-position: center center; /* x y */
     background-size: cover;
     background-repeat: no-repeat;
+
+    // transition: all .5s ease-in;
+    // animation: animBg 30s linear infinite;
 }
-.slide1 {
-    background-image: url('./../../img/background/01.jpg');
-    @include mediaBg() {
-        background-image: url('./../../img/background/01@2x.jpg');
+
+.next-slide__wrapper {
+    position: absolute;
+    display: block;
+    top: 5px;
+    left: 5px;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+    
+
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+
+    @include mobile {
+        display: none;
+    }
+    @include mobileH {
+        display: none;
     }
 }
-.slide2 {
-    background-image: url('./../../img/background/02.jpg');
-    @include mediaBg() {
-        background-image: url('./../../img/background/02@2x.jpg');
-    }
+
+.next-slide {
+    display: block;
+    width: 200px;
+    aspect-ratio: 16 / 9;
+
+    background-position: center center; /* x y */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    
+    
+
+    border-radius: 0.3em;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0.5em 1em rgba(0, 0, 0, 0.6);
 }
-.slide3 {
-    background-image: url('./../../img/background/03.jpg');
-    @include mediaBg() {
-        background-image: url('./../../img/background/03@2x.jpg');
-    }
+
+.next-slide-btn {
+    color: var(--text-color-white);
+    text-shadow: 1px 1px #303030;
+    display: block;
+    opacity: 1;
+    transition: all 0.2s ease-in;
 }
-.slide4 {
-    background-image: url('./../../img/background/04.jpg');
-    @include mediaBg() {
-        background-image: url('./../../img/background/04@2x.jpg');
-    }
+.next-slide-btn-action {
+    display: none;
+    
+}
+.next-slide-close {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    top: 5px;
+    right: 10px;
+    color: var(--text-color-white);
+    text-shadow: 1px 1px #303030;
+    transition: all 0.7s ease-in;
+}
+.close-hid {
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    display: none;
+}
+.close-vis {
+    opacity: 1;
+    transition: all 0.5s ease-in;
+    display: block;
+    
+}
+.action-slide {
+    opacity: 1;
+}
+.action-wrapper {
+    top: 5px;
+    left: 5px;
+
 }
