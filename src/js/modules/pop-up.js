@@ -82,11 +82,20 @@ function popup() {
         let aphorismsLine = document.querySelector('.aphorisms__line');
         aphorismsDisp.classList.add('disp-vis');
         aphorismsLine.classList.add('disp-vis');
-
-        // setTimeout(function () {
-        //     opas()
-        // }, 1000);
     }
+    //--- скрытие афоризма по клику
+    let btnHiddenAfo = document.querySelector('.aphorisms-btn');
+    btnHiddenAfo.innerText = 'скрыть афоризмы';
+
+    btnHiddenAfo.onclick = function () {
+        document.querySelector('.aphorisms__text').classList.toggle('disp-novis');
+
+        if (btnHiddenAfo.innerText == 'скрыть афоризмы') {
+            btnHiddenAfo.innerText = 'показать афоризмы';
+        }
+        else (btnHiddenAfo.innerText = 'скрыть афоризмы');
+    };
+
 
     function saveToLocalStorage() {
         localStorage.setItem('localStorName', JSON.stringify(localStorName));

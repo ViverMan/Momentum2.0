@@ -9,6 +9,7 @@ function media() {
     let time = document.querySelector('.container');
     let containerWeather = document.querySelector('.container-small');
     let popUpHidden = document.querySelector('.pop-up__title-main');
+    let aphorisms = document.querySelector('.pop-up__aphorisms');
 
 
 
@@ -23,6 +24,8 @@ function media() {
                 containerWeather.classList.toggle('disp-none');
 
                 popUpHidden.classList.toggle('disp-flex');
+
+                aphorisms.classList.toggle('disp-none');
             })
         }
     }

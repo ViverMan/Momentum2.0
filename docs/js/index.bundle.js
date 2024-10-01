@@ -547,6 +547,7 @@ function media() {
     let time = document.querySelector('.container');
     let containerWeather = document.querySelector('.container-small');
     let popUpHidden = document.querySelector('.pop-up__title-main');
+    let aphorisms = document.querySelector('.pop-up__aphorisms');
 
 
 
@@ -561,6 +562,8 @@ function media() {
                 containerWeather.classList.toggle('disp-none');
 
                 popUpHidden.classList.toggle('disp-flex');
+
+                aphorisms.classList.toggle('disp-none');
             })
         }
     }
@@ -669,11 +672,20 @@ function popup() {
         let aphorismsLine = document.querySelector('.aphorisms__line');
         aphorismsDisp.classList.add('disp-vis');
         aphorismsLine.classList.add('disp-vis');
-
-        // setTimeout(function () {
-        //     opas()
-        // }, 1000);
     }
+    //--- скрытие афоризма по клику
+    let btnHiddenAfo = document.querySelector('.aphorisms-btn');
+    btnHiddenAfo.innerText = 'скрыть афоризмы';
+
+    btnHiddenAfo.onclick = function () {
+        document.querySelector('.aphorisms__text').classList.toggle('disp-novis');
+
+        if (btnHiddenAfo.innerText == 'скрыть афоризмы') {
+            btnHiddenAfo.innerText = 'показать афоризмы';
+        }
+        else (btnHiddenAfo.innerText = 'скрыть афоризмы');
+    };
+
 
     function saveToLocalStorage() {
         localStorage.setItem('localStorName', JSON.stringify(localStorName));
