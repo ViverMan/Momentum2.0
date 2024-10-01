@@ -258,16 +258,12 @@ function week() {
 /* harmony default export */ var day_week = (week);
 
 
-;// CONCATENATED MODULE: ./src/html/data/image.json
-var image_namespaceObject = JSON.parse('["srcset = ./../img/background/01.jpg 1x, ./../img/background/01@2x.jpg 2x","srcset = ./../img/background/02.jpg 1x, ./../img/background/02@2x.jpg 2x","srcset = ./../img/background/03.jpg 1x, ./../img/background/03@2x.jpg 2x","srcset = ./../img/background/04.jpg 1x, ./../img/background/04@2x.jpg 2x"]');
 ;// CONCATENATED MODULE: ./src/js/modules/time.js
-
 
 function time() {
 
     let img = document.querySelector('#imageID');
     let imgNext = document.querySelector('#nextImageID');
-    let image = image_namespaceObject;
 
     function checkTime(i) {
 
@@ -285,23 +281,35 @@ function time() {
         let second = today.getSeconds();
 
         if (hour >= 0) {
-            img.srcset = `${image[0]}`
-            imgNext.srcset = `${image[1]}`
+            img.classList.add('slide1');
+            img.classList.remove('slide4');
+
+            imgNext.classList.add('slide2');
+            imgNext.classList.remove('slide1');
         };
 
         if (hour >= 6) {
-            img.srcset = `${image[1]}`
-            imgNext.srcset = `${image[2]}`
+            img.classList.add('slide2');
+            img.classList.remove('slide1');
+
+            imgNext.classList.add('slide3');
+            imgNext.classList.remove('slide2');
         };
 
         if (hour >= 12) {
-            img.srcset = `${image[2]}`
-            imgNext.srcset = `${image[3]}`
+            img.classList.add('slide3');
+            img.classList.remove('slide2');
+
+            imgNext.classList.add('slide4');
+            imgNext.classList.remove('slide3');
         };
 
         if (hour >= 18) {
-            img.srcset = `${image[3]}`
-            imgNext.srcset = `${image[0]}`
+            img.classList.add('slide4');
+            img.classList.remove('slide3');
+
+            imgNext.classList.add('slide1');
+            imgNext.classList.remove('slide4');
         };
 
         hour = checkTime(hour);
