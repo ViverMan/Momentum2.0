@@ -21,8 +21,6 @@ function time() {
         let minute = today.getMinutes();
         let second = today.getSeconds();
 
-        console.log(image[0]);
-
         if (hour >= 0) {
             img.srcset = `${image[0]}`
             imgNext.srcset = `${image[1]}`

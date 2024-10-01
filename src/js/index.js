@@ -6,7 +6,6 @@
 // 	// Your custom options
 // });
 
-
 import todo from './modules/slide-todo.js';
 todo();
 
